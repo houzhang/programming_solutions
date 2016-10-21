@@ -4,7 +4,7 @@ For example, the rotation of array A = [3, 8, 9, 7, 6] is [6, 3, 8, 9, 7]. The g
 
 Write a function:
 
-def solution(a, k)
+```def solution(a, k)```
 
 that, given a zero-indexed array A consisting of N integers and an integer K, returns the array A rotated K times.
 
