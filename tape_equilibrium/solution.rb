@@ -1,16 +1,3 @@
-# def solution(n)
-#   difference_array = []
-#   n.each_with_index do |x, index|
-#     if index+1 < n.size
-#       difference_array << (n.slice(0, index+1).reduce(:+) - n.slice(index+1, n.size).reduce(:+))
-#     end
-#   end
-#   p difference_array
-#   difference_array = difference_array.map {|y| y < 0 ? -y : y}
-#     p difference_array
-#   difference_array.min
-# end
-
 def solution(n)
   difference_array = []
   sum1 = n[0]
@@ -27,8 +14,6 @@ def solution(n)
   difference_array = difference_array.map {|y| y < 0 ? -y : y}
   difference_array.min
 end
-
-
 
 require 'minitest/autorun'
 
