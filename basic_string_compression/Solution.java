@@ -1,5 +1,5 @@
 public class Solution {
-    
+
     /**
      * input:  "aaaabbbccdaa"
      * output: "a3b2c1d0a1"
