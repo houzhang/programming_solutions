@@ -6,6 +6,8 @@ Given N Quxes standing in a line, determine the smallest number of them remainin
 
 For example, given the input ['R', 'G', 'B', 'G', 'B'], it is possible to end up with a single Qux through the following steps:
 
+```
+
         Arrangement       |   Change
 ----------------------------------------
 ['R', 'G', 'B', 'G', 'B'] | (R, G) -> B
@@ -13,3 +15,5 @@ For example, given the input ['R', 'G', 'B', 'G', 'B'], it is possible to end up
 ['B', 'R', 'B']           | (R, B) -> G
 ['B', 'G']                | (B, G) -> R
 ['R']                     |
+
+```
