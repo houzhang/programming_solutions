@@ -1,7 +1,10 @@
 "use strict"
 
-const array1 = [1, 2, 3];
-const array2 = [1, 2, 3, 4, 5, 6];
+const examples = [
+  [1, 2, 3],
+  [1, 2, 3, 4, 5, 6],
+  [1, 2, 3, 4]
+]
 
 class Node {
   constructor(data, left = null, right = null) {
@@ -34,5 +37,7 @@ function main(elements) {
   console.log(tree);
 }
 
-main(array1);
-main(array2);
+examples.forEach(example => {
+  console.log("testing: ", example);
+  main(example);
+});
