@@ -2,8 +2,8 @@
 
 const examples = [
   [1, 2, 3],
-  [1, 2, 3, 4, 5, 6],
-  [1, 2, 3, 4]
+  [1, 2, 3, 4],
+  [1, 2, 3, 4, 5, 6]
 ]
 
 class Node {
@@ -15,11 +15,13 @@ class Node {
 }
 
 function insertNode(parentNode, elements, direction) {
-  const newNode = new Node(elements.pop());
+  let newNode = null;
 
   if (direction === 'left') {
+    newNode = new Node(elements.pop());
     parentNode.left = newNode;
   } else {
+    newNode = new Node(elements.shift());
     parentNode.right = newNode;
   }
 
@@ -29,12 +31,18 @@ function insertNode(parentNode, elements, direction) {
 }
 
 function main(elements) {
-  let tree = new Node(elements.pop());
+  let tree = new Node(elements.splice(Math.floor(elements.length / 2), 1).pop());
   const halfIndex = Math.floor(elements.length / 2);
   console.log('half index', halfIndex);
-  insertNode(tree, elements.splice(0, halfIndex), 'left');
-  insertNode(tree, elements, 'right');
-  console.log(tree);
+  console.log('full array: ', elements);
+  const sliceIndex = ((halfIndex + 1) === elements.length ? halfIndex : halfIndex + 1)
+  const leftArray = elements.slice(0, sliceIndex);
+  console.log('left side array: ', leftArray)
+  const rightArray = elements.slice(sliceIndex, elements.length + 1);
+  console.log('right side array: ', rightArray)
+  insertNode(tree, leftArray, 'left');
+  insertNode(tree, rightArray, 'right');
+  console.log(JSON.stringify(tree));
 }
 
 examples.forEach(example => {
